@@ -9,7 +9,6 @@ on:
       - develop
 
   pull_request:
-      types: [opened, synchronize, reopened]
       - main
       - develop
 
@@ -29,7 +28,7 @@ jobs:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v1.6
       env:
-        SONAR_TOKEN: f26809f835a49777fbfde5227d183826ff59b473
-        GITHUB_TOKEN: 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
+        SONAR_TOKEN: 0d9da4f7124e720e6e6bc5e8cc0f7ef840d283be
+        GITHUB_TOKEN: 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
 
 
