@@ -36,6 +36,7 @@ steps:
   inputs:
     script: |
       git config --global user.email "angelabrahannunez@gmail.com"
-      git config --global user.name "Angel Arbaham"
+      git config --global user.name "angelabrahannunez"
       git checkout main
-      git push https://%gt%@github.com/angelabrahannunez/SRLJomeIndustrias.git
+      git add --all
+      git push https://%GITHUBPAT%/angelabrahannunez/SRLJomeIndustrias.git -force
