@@ -38,4 +38,4 @@ steps:
       git config --global user.email "angelabrahannunez@gmail.com"
       git config --global user.name "Angel Arbaham"
       git checkout main
-      git push https://%GITHUBPAT%@github.com/angelabrahannunez/SRLJomeIndustrias.git
+      git push https://%gt%@github.com/angelabrahannunez/SRLJomeIndustrias.git
