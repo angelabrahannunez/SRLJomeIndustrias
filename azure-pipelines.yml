@@ -14,7 +14,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-steps:
+steps:  
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -39,4 +39,4 @@ steps:
       git config --global user.name "angelabrahannunez"
       git checkout main
       git add --all
-      git push https://%GITHUBPAT%/angelabrahannunez/SRLJomeIndustrias.git -force
+      git push https://%GITHUBPAT%/angelabrahannunez/SRLJomeIndustrias.git --force
