@@ -1,0 +1,35 @@
+name: Main Workflow
+
+on:
+
+  push:
+
+    branches:
+      - main
+      - develop
+
+  pull_request:
+      types: [opened, synchronize, reopened]
+      - main
+      - develop
+
+jobs:
+  sonarcloud:
+
+    name: SonarCloud Trigger
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Clone Repository
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@v1.6
+      env:
+        SONAR_TOKEN: f26809f835a49777fbfde5227d183826ff59b473
+        GITHUB_TOKEN: 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
+
+
