@@ -39,4 +39,4 @@ steps:
       git config --global user.name "angelabrahannunez"
       git checkout main
       git add --all
-      git push https://%GITHUBPAT%/angelabrahannunez/SRLJomeIndustrias.git --force
+      git push https://%GITHUBPAT%@github.com/angelabrahannunez/SRLJomeIndustrias.git --force
