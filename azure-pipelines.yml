@@ -31,3 +31,11 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: CmdLine@2
+  inputs:
+    script: |
+      git config --global user.email "angelabrahannunez@gmail.com"
+      git config --global user.name "Angel Arbaham"
+      git checkout master
+      git push https://$(GitHubPAT)@github.com/angelabrahannunez/SRLJomeIndustrias.git
