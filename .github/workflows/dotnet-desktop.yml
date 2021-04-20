@@ -1,4 +1,4 @@
-name: Main Workflow
+name: My Main Workflow
 
 on:
 
@@ -8,23 +8,27 @@ on:
       - main
       - develop
 
+    pull_request:
+      types: [opened, synchronize, reopened]
+
 jobs:
+
   sonarcloud:
 
-    name: SonarCloud Trigger
+    name: SonarCloud
     runs-on: ubuntu-latest
 
     steps:
 
     - name: Clone Repository
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
       with:
         fetch-depth: 0
 
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v1.6
       env:
-        SONAR_TOKEN: 0d9da4f7124e720e6e6bc5e8cc0f7ef840d283be
-        GITHUB_TOKEN: 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
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
