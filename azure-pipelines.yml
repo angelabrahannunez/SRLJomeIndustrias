@@ -22,6 +22,7 @@ steps:
     msbuildArgs: '/p:OutputPath=$(Build.ArtifactStagingDirectory)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
@@ -35,10 +36,3 @@ steps:
       git checkout main
       git add --all
       git push https://%GITHUBPAT%@github.com/angelabrahannunez/SRLJomeIndustrias.git --force
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'PlantaAguaAplicativo'
-
-
