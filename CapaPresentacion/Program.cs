@@ -14,7 +14,7 @@ namespace CapaPresentacion
         {
             try
             {
-                ExecuteCommand("docker-compose up -d");
+                //ExecuteCommand("docker-compose up -d");
             }
             catch (Exception e)
             {
@@ -25,7 +25,16 @@ namespace CapaPresentacion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            ExecuteCommand("docker rm MySQLSRLJomeIndustrias -f");
+
+            try
+            {
+                //ExecuteCommand("docker rm MySQLSRLJomeIndustrias -f");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                throw;
+            }
         }
 
         static void ExecuteCommand(string _Command)
