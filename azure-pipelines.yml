@@ -36,3 +36,13 @@ steps:
       git checkout main
       git add --all
       git push https://%GITHUBPAT%@github.com/angelabrahannunez/SRLJomeIndustrias.git --force
+
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
+
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Run a Docker Compose command'
